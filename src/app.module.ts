@@ -5,6 +5,7 @@ import { UserModule } from './modules/user/user.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule , ConfigService } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
+import { EntryModule } from './modules/entry/entry.module';
 
 @Module({
   imports: [
@@ -24,7 +25,8 @@ import { AuthModule } from './auth/auth.module';
     }),
     ConfigModule.forRoot(),
     UserModule,
-    AuthModule],
+    AuthModule,
+    EntryModule],
   controllers: [AppController],
   providers: [AppService],
 })
