@@ -6,9 +6,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule , ConfigService } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { EntryModule } from './modules/entry/entry.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
+    MongooseModule.forRoot('mongodb+srv://ashanr:wgwDSP1UNxR88InA@cluster0.aoezxi5.mongodb.net/my_db?tls=true'),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
